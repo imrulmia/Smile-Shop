@@ -15,7 +15,7 @@ const Register = () => {
   const [conPass, setConPass] = useState(false)
 
   const router =useRouter();
-  const handleSubmit=(e)=>{
+  const handleSubmit=(e: React.FormEvent<HTMLFormElement>)=>{
     e.preventDefault()
     router.push('/')
 

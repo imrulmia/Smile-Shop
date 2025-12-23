@@ -9,7 +9,7 @@ const ForgetPass = () => {
   const router = useRouter();
   const [email, setEmail] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!email) return alert("Please enter your email");
     router.push('/newpass'); // navigate to new password page
