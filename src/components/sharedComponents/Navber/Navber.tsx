@@ -21,14 +21,15 @@ import { FaBars, FaRegHeart, FaRegUser } from 'react-icons/fa'
 import { PiShoppingCartSimpleBold } from 'react-icons/pi'
 import { usePathname } from 'next/navigation'
 import { MdClose } from 'react-icons/md'
+import User from './User'
 
 
 const Navbar = () => {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false)
   return (
-    <div className='fixed w-full z-50'>
-      <div className='flex justify-between px-4 md:px-24 py-6 shadow-xl  relative'>
+    <div className='fixed top-0 left-0 right-0 z-50 bg-white shadow-md'>
+      <div className='flex justify-between px-4 md:px-24 py-6 shadow-md  relative'>
         <Link href={'/'}>
           <Image
             className='md:w-[150px] w-[100px] max-h-[86px]'
@@ -78,16 +79,16 @@ const Navbar = () => {
         </div>
         <div className='hidden  xl:flex justify-center items-center gap-x-3'>
 
-          <FaRegHeart />
-          <PiShoppingCartSimpleBold />
-          <FaRegUser />
+          <FaRegHeart size={20} />
+          <PiShoppingCartSimpleBold size={20} />  
+          <User/> 
         </div>
 
         {/* mobile device ar jonno */}
         <div className='flex xl:hidden justify-center items-center'>
           <Button className='bg-[#EA5326]  rounded-full ' onClick={() => setIsOpen(!isOpen)}>
             {
-              isOpen ? <FaBars /> : <MdClose />
+              isOpen ?  <MdClose />:<FaBars /> 
             }
 
           </Button>
@@ -97,7 +98,7 @@ const Navbar = () => {
 
         
           {
-            isOpen && <div className='absolute top-36 right-0 shadow-2xl w-2/4 h-4/2 rounded-md'> 
+            isOpen && <div className='absolute top-25 pt-7  fixed  right-0 z-50 bg-white  shadow-2xl w-full h-4/2 rounded-md'> 
               <div className='flex flex-col justify-center items-center space-y-4'>
                 <div className="flex justify-center items-center h-[46px]">
                   <div className="relative">
